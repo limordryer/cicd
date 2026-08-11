@@ -34,18 +34,18 @@ docker buildx version
 
 ### clone YOUR repo
 ```sh
-sudo git clone https://github.com/nivitzhaky/cicd.git
+sudo git clone https://github.com/limordryer/cicd.git
 ```
 
 ### add inbound rule 
-TCP port 8000  mask 0.0.0.0/0
+TCP port 8080  mask 0.0.0.0/0
 
 ```sh
 cd cicd
 sudo docker compose up -d
 ```
 ### test
-test machineip:8000
+test machineip:8080
 
 ### change H1 title 
 commit and push and test again
@@ -67,7 +67,7 @@ click create records in Route53 <br>
 wait for verification (can take long time) 
 ### Cloudfront
 origin type -> public DNS of your Ec2 <br>
-edit origin change to http only and put port 8000 <br>
+edit origin change to http only and put port 8080 <br>
 in behaviours -> cache policy -> CachingDisabled <br>
 ### Route53
 Hosted zoned -> your domain -> create record <br>
