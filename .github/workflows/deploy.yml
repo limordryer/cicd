@@ -18,7 +18,8 @@ jobs:
           chmod 600 key.pem
           ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@13.51.176.205 "
             cd cicd &&
-            sudo git pull &&
+            sudo git fetch origin &&
+            sudo git reset --hard origin/main &&
             sudo docker compose up --build -d
           "
           rm -f key.pem
